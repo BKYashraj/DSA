@@ -4,7 +4,9 @@ public:
         int minr = 0, minc = 0;
         int maxr = n-1, maxc = n-1;
         vector<vector<int>>matrix(n,vector<int>(n));
-        int value = 1;
+        
+        int value = 1; // This value is 1 because we have to create the matrix of 1,2,3,4,5,6,7,8,9 ....
+        
         while(minr<=maxr && minc<=maxc){
             for(int j = minc;j<=maxc;j++){
                 matrix[minr][j] = value++;
