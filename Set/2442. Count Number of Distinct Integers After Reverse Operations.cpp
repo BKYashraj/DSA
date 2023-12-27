@@ -1,21 +1,21 @@
 class Solution {
 public:
-    int reverse(int n){
+    int reverse(int ele){
         int ans = 0;
-        while(n>0){
-           int r = n%10;
-            ans = ans*10+r;
-            n = n/10;
+        while(ele > 0){
+            int r = ele % 10;
+            ans = ans * 10 + r;
+            ele = ele/10;
         }
         return ans;
     }
     int countDistinctIntegers(vector<int>& nums) {
-        int n = nums.size();
-        unordered_set<int> y;
+        int n=nums.size();
+        unordered_set<int> v;
         for(int i=0;i<n;i++){
-            y.insert(nums[i]);
-            y.insert(reverse(nums[i]));
+            v.insert(nums[i]);
+            v.insert(reverse(nums[i]));
         }
-        return y.size();
+        return v.size();
     }
 };
