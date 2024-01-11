@@ -38,17 +38,18 @@ public:
             else if(arr[mid] < x) lo = mid+1;
             else hi = mid-1;
         }
-        // if element is not present then  this condition exist
+        // if element is not present then this condition exist
         int lb = hi;
         int ub = lo;
         if(flag == true){
-            //but when element exist then condition is difference
+            //but when element exist then condition for lb and ub is different
             lb = mid-1;
             ub = mid+1;
         }
+        //element adding to vector is starting from here
         while(t<k && lb>=0 && ub<=n-1){
-            int d1 = abs(x - arr[lb]);
-            int d2 = abs(x - arr[ub]);
+            int d1 = abs(x - arr[lb]); // left side diff
+            int d2 = abs(x - arr[ub]); // right side diff
             if(d1 <= d2){
                 ans[t] = arr[lb];
                 lb--;
