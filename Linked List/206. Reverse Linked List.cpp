@@ -1,3 +1,4 @@
+1. Iterative way
 class Solution {
 public:
     ListNode* reverseList(ListNode* head) {
@@ -11,5 +12,17 @@ public:
             curr = Next; 
         }
         return prev;
+    }
+};
+
+2. Recursive Way
+class Solution {
+public:
+    ListNode* reverseList(ListNode* head) {
+       if(head==NULL || head->next == NULL) return head;
+       ListNode * newll = reverseList(head->next);
+       head->next->next = head;
+       head->next = NULL; 
+       return newll;
     }
 };
